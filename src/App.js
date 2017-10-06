@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import TeacherList from './teachers.js';
 import { CSSCourses, HTMLCourses, JSCourses } from './courses.js';
-
 class Home extends Component {
 	render() {
 		return (
@@ -22,7 +21,7 @@ class Home extends Component {
 class About extends Component {
 	render() {
 		return (
-			<div className="main-content">
+			<div className="main-content about">
 				<h2>About</h2>
 				<p>The front end course directory lists many of the courses we teach on HTML, CSS, JavaScript and more! Be sure to
 					visit the Teachers section to view a list of our talented teachers. Or visit the Courses section and select a
@@ -175,9 +174,10 @@ class App extends Component {
 				Child = Home;
 		}
 		return (
-			<div className="container">
+			<div data-reactor className="container">
 				<header>
 					<span className="icn-logo">
+						<i className="material-icons">code</i>
 					</span>
 					<ul className="main-nav">
 						<li ><a aria-current="false" href="/">Home</a></li>

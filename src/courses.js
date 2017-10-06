@@ -116,5 +116,3 @@ export const JSCourses = [
 ];
 
 
-// WEBPACK FOOTER //
-// ./src/data/courses.js

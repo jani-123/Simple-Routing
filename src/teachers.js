@@ -38,7 +38,3 @@ const TeacherList = [
 ];
 
 export default TeacherList;
-
-
-// WEBPACK FOOTER //
-// ./src/data/teachers.js
