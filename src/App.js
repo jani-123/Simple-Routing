@@ -34,20 +34,22 @@ class About extends Component {
 class Teachers extends Component {
 	render() {
 		return (
-			TeacherList.map((item, index) => {
-				return (
-					<div className="main-content">
-						<h2>Teachers</h2>
-						<ul className="group">
-							<li className="teacher" key={index}>
-								<img class="teacher-img" src={item.img_src} alt="teacher" />
-								<h3>{item.name}</h3>
-								<p>{item.bio}</p>
-							</li>
-						</ul>
-					</div>
-				)
-			})
+			<div className="main-content">
+				<h2>Teachers</h2>
+				<ul className="group">
+					{
+						TeacherList.map((item, index) => {
+							return (
+								<li className="teacher" key={index}>
+									<img className="teacher-img" src={item.img_src} alt="teacher" />
+									<h3>{item.name}</h3>
+									<p>{item.bio}</p>
+								</li>
+							)
+						})
+					}
+				</ul>
+			</div>
 		)
 	}
 }
@@ -61,15 +63,13 @@ class Courses extends Component {
 					return (
 						CSSCourses.map((item, index) => {
 							return (
-								<div className="main-content">
-									<ul>
-										<li className="course media group" key={index}>
-											<img className="course-img" src={item.img_src} alt="teacher" />
-											<h3>{item.title}</h3>
-											<p>{item.description}</p>
-										</li>
-									</ul>
-								</div>
+								<li className="course media group" key={index}>
+									<img className="course-img" src={item.img_src} alt="course" />
+									<div>
+										<h3>{item.title}</h3>
+										<p>{item.description}</p>
+									</div>
+								</li>
 							)
 						})
 					)
@@ -80,15 +80,13 @@ class Courses extends Component {
 					return (
 						JSCourses.map((item, index) => {
 							return (
-								<div className="main-content">
-									<ul>
-										<li className="course media group" key={index}>
-											<img className="course-img" src={item.img_src} alt="teacher" />
-											<h3>{item.title}</h3>
-											<p>{item.description}</p>
-										</li>
-									</ul>
-								</div>
+								<li className="course media group" key={index}>
+									<img className="course-img" src={item.img_src} alt="course" />
+									<div>
+										<h3>{item.title}</h3>
+										<p>{item.description}</p>
+									</div>
+								</li>
 							)
 						})
 					)
@@ -99,15 +97,13 @@ class Courses extends Component {
 					return (
 						HTMLCourses.map((item, index) => {
 							return (
-								<div className="main-content">
-									<ul>
-										<li className="course media group" key={index}>
-											<img className="course-img" src={item.img_src} alt="teacher" />
-											<h3>{item.title}</h3>
-											<p>{item.description}</p>
-										</li>
-									</ul>
-								</div>
+								<li className="course media group" key={index}>
+									<img className="course-img" src={item.img_src} alt="course" />
+									<div>
+										<h3>{item.title}</h3>
+										<p>{item.description}</p>
+									</div>
+								</li>
 							)
 						})
 					)
@@ -119,10 +115,12 @@ class Courses extends Component {
 				<div className="course-header group">
 					<h2>COURSES</h2>
 					<ul className="course-nav">
-						<li><a aria-current="true" href='#/courses/html'>HTML</a></li>
-						<li><a aria-current="false" href='#/courses/css'>CSS</a></li>
+						<li><a href='#/courses/html' >HTML</a></li>
+						<li><a href='#/courses/css'>CSS</a></li>
 						<li><a aria-current="false" href='#/courses/javascript'>JavaScript</a></li>
 					</ul>
+				</div>
+				<div>
 					<ul>
 						{CurrentList}
 					</ul>
@@ -180,11 +178,6 @@ class App extends Component {
 			<div className="container">
 				<header>
 					<span className="icn-logo">
-						<i className="material-icons">
-						<i className="fa fa-chevron-left" aria-hidden="true"></i>
-						</i>
-						{/* 
-						<i className="fa fa-chevron-right" aria-hidden="true"></i> */}
 					</span>
 					<ul className="main-nav">
 						<li ><a aria-current="false" href="/">Home</a></li>
