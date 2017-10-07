@@ -1,4 +1,7 @@
-class Home extends React.Component {
+
+
+
+  class Home extends React.Component {
 	render() {
 		return (
 			<div className="main-content home">
@@ -180,7 +183,3 @@ class App extends React.Component {
 	}
 }
 
-ReactDOM.render(
-	<App />,
-	document.getElementById('container')
-);
