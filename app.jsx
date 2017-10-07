@@ -1,8 +1,4 @@
-import React, { Component } from 'react';
-import './App.css';
-import TeacherList from './teachers.js';
-import { CSSCourses, HTMLCourses, JSCourses } from './courses.js';
-class Home extends Component {
+class Home extends React.Component {
 	render() {
 		return (
 			<div className="main-content home">
@@ -18,7 +14,7 @@ class Home extends Component {
 		);
 	}
 }
-class About extends Component {
+class About extends React.Component {
 	render() {
 		return (
 			<div className="main-content about">
@@ -30,7 +26,7 @@ class About extends Component {
 		);
 	}
 }
-class Teachers extends Component {
+class Teachers extends React.Component {
 	render() {
 		return (
 			<div className="main-content">
@@ -52,15 +48,13 @@ class Teachers extends Component {
 		)
 	}
 }
-class Courses extends Component {
+class Courses extends React.Component {
 	render() {
 		const { route } = this.props;
 		let CurrentList = null;
 		switch (route) {
 			case 'css':
-				CurrentList = ['How to Make a CSS', 'HTML CSS'].map((item, index) => {
-					return (
-						CSSCourses.map((item, index) => {
+				CurrentList = CSSCourses.map((item, index) => {
 							return (
 								<li className="course media group" key={index}>
 									<img className="course-img" src={item.img_src} alt="course" />
@@ -70,14 +64,10 @@ class Courses extends Component {
 									</div>
 								</li>
 							)
-						})
-					)
-				});
+						});
 				break;
 			case 'javascript':
-				CurrentList = ['How to Make a JS', 'HTML JS'].map((item, index) => {
-					return (
-						JSCourses.map((item, index) => {
+				CurrentList = JSCourses.map((item, index) => {
 							return (
 								<li className="course media group" key={index}>
 									<img className="course-img" src={item.img_src} alt="course" />
@@ -87,14 +77,10 @@ class Courses extends Component {
 									</div>
 								</li>
 							)
-						})
-					)
-				});
+						});
 				break;
 			default: //'html'
-				CurrentList = ['How to Make a Website', 'HTML Forms'].map((item, index) => {
-					return (
-						HTMLCourses.map((item, index) => {
+				CurrentList = HTMLCourses.map((item, index) => {
 							return (
 								<li className="course media group" key={index}>
 									<img className="course-img" src={item.img_src} alt="course" />
@@ -104,9 +90,7 @@ class Courses extends Component {
 									</div>
 								</li>
 							)
-						})
-					)
-				});
+						});
 				break;
 		}
 		return (
@@ -130,7 +114,7 @@ class Courses extends Component {
 	}
 }
 
-class App extends Component {
+class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -180,20 +164,22 @@ class App extends Component {
 						<i className="material-icons">code</i>
 					</span>
 					<ul className="main-nav">
-						<li ><a aria-current="false" href="/">Home</a></li>
-						<li ><a aria-current="false" href="#/about">About</a></li>
-						<li ><a aria-current="false" href="#/teachers">Teachers</a></li>
-						<li ><a aria-current="false" href="#/courses">Courses</a></li>
+						<li><a aria-current="false" href="#/">Home</a></li>
+						<li><a aria-current="false" href="#/about">About</a></li>
+						<li><a aria-current="false" href="#/teachers">Teachers</a></li>
+						<li><a aria-current="false" href="#/courses">Courses</a></li>
 					</ul>
-				</header>{' '}
+				</header>
+        
 				{
-					propsForCourses ?
-						<Child route={propsForCourses} />
-						:
-						<Child />
+					propsForCourses ? <Child route={propsForCourses} /> : <Child/>
 				}
 			</div>
 		);
 	}
 }
-export default App;
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('container')
+);

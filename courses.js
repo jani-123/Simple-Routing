@@ -1,4 +1,4 @@
-export const CSSCourses = [
+const CSSCourses = [
   {
     title: "CSS Basics",
     description: "CSS (Cascading Style Sheets) is a style sheet language that describes the presentation of web pages. Whereas HTML is what forms the structure of a web page, CSS is what we use to style the HTML with colors, backgrounds, font sizes, layout, and more. As you'll soon learn, CSS is one of the core technologies for designing and building websites.",
@@ -37,7 +37,7 @@ export const CSSCourses = [
   }
   ];
   
-export const HTMLCourses =[
+const HTMLCourses =[
     {
       title: "How to Make a Website",
       description: "If you’ve never built a website before and you have no coding or design experience, this is the place to start. In this project, we learn how to build a modern portfolio website for desktops, tablets, and mobile devices. We start with basic HTML and CSS syntax. Next, we learn how to build custom web pages with an image gallery and contact page. Finally, we walk through how to share a website live on the web.",
@@ -76,7 +76,7 @@ export const HTMLCourses =[
     }
   ];
   
-export const JSCourses = [
+const JSCourses = [
   {
     title:"JavaScript Basics",
     description:"JavaScript is a programming language that drives the web: from front-end user interface design, to backend server-side programming, you'll find JavaScript at every stage of a web site and web application. In this course, you'll learn the fundamental programming concepts and syntax of the JavaScript programming language.",
@@ -114,5 +114,3 @@ export const JSCourses = [
     id: "js-6"
   }
 ];
-
-
